@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B2D24D91DD511A000B5BD3F /* City.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D24D71DD511A000B5BD3F /* City.cpp */; };
+		4B2D24DC1DD511CC00B5BD3F /* Citizen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D24DA1DD511CC00B5BD3F /* Citizen.cpp */; };
 		4B833C851DD4FA0200A43AF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4B833C841DD4FA0200A43AF0 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B2D24D71DD511A000B5BD3F /* City.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = City.cpp; sourceTree = "<group>"; };
+		4B2D24D81DD511A000B5BD3F /* City.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = City.hpp; sourceTree = "<group>"; };
+		4B2D24DA1DD511CC00B5BD3F /* Citizen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Citizen.cpp; sourceTree = "<group>"; };
+		4B2D24DB1DD511CC00B5BD3F /* Citizen.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Citizen.hpp; sourceTree = "<group>"; };
 		4B833C811DD4FA0200A43AF0 /* Exam 2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Exam 2"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B833C841DD4FA0200A43AF0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				4B833C841DD4FA0200A43AF0 /* main.cpp */,
+				4B2D24D71DD511A000B5BD3F /* City.cpp */,
+				4B2D24D81DD511A000B5BD3F /* City.hpp */,
+				4B2D24DA1DD511CC00B5BD3F /* Citizen.cpp */,
+				4B2D24DB1DD511CC00B5BD3F /* Citizen.hpp */,
 			);
 			path = "Exam 2";
 			sourceTree = "<group>";
@@ -119,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2D24D91DD511A000B5BD3F /* City.cpp in Sources */,
 				4B833C851DD4FA0200A43AF0 /* main.cpp in Sources */,
+				4B2D24DC1DD511CC00B5BD3F /* Citizen.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +258,7 @@
 				4B833C8A1DD4FA0200A43AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
