@@ -30,7 +30,6 @@ public:
 public:
     City(string);
     ~City();
-    City(const City&);
     
     string getCityName();
     int populationSize();

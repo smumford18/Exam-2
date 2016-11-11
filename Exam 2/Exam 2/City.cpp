@@ -31,6 +31,9 @@ City::City(string cityName)
         while (!fileIO.eof())
         {
             fileIO >> id >> fname >> lname >> color;
+            Citizen* citizenToAdd = new Citizen(id, fname, lname, color);
+            newCity.push_back(citizenToAdd);
+            numOfCitizens++;
         }
     }
     fileIO.close();
@@ -46,9 +49,9 @@ City::~City()
     {
         int id;
         string fname, lname, color;
-        for(int i=0; i < newCity.size(); i++)
+        for(int i=0; i < numOfCitizens; i++)
         {
-            output << (newCity.at(i))->getID() << " " <<  (newCity.at(i))->getFirstName() << " " << newCity.at(i)->getLastName() << " " << (newCity.at(i))->getFavoriteColor() << endl;
+            output << newCity.at(i)->getID() << " " <<  newCity.at(i)->getFirstName() << " " << newCity.at(i)->getLastName() << " " << newCity.at(i)->getFavoriteColor() << endl;
         }
     }
     output.close();
@@ -66,14 +69,14 @@ int City::populationSize()
 
 Citizen* City::getCitizenAtIndex(int index)
 {
-    return (newCity.at(index));
+    return (newCity[index]);
 }
 
 void City::addCitizen(Citizen* newCitizen)
 {
-    newCity.push_back(newCitizen);
+    Citizen* citizenToAdd = new Citizen(newCitizen);
+    newCity.push_back(citizenToAdd);
     numOfCitizens++;
-    Citizen *citizenCopy = new Citizen(newCitizen);
 }
 
 Citizen* City::getCitizenWithId(int testID)
@@ -81,7 +84,7 @@ Citizen* City::getCitizenWithId(int testID)
     bool found = false;
     while(found == false)
     {
-        for(int i=0; i < newCity.size(); i++)
+        for(int i=0; i < numOfCitizens ; i++)
         {
             if(testID == newCity.at(i)->getID())
             {
@@ -91,13 +94,13 @@ Citizen* City::getCitizenWithId(int testID)
             }
         }
     }
-    return (newCity.at(newCity.size()));
+    return (newCity.at(0));
 }
 
 vector<Citizen*> City::getCitizensForFavoriteColor(string favColor)
 {
     vector<Citizen*> citizensWithSameFavColor;
-    for(int i=0; i < newCity.size(); i++)
+    for(int i=0; i < numOfCitizens; i++)
     {
         if(newCity.at(i)->getFavoriteColor() == favColor)
            citizensWithSameFavColor.push_back(newCity.at(i));
