@@ -25,8 +25,12 @@ private:
     string favColor;
     
 public:
+    // Constructor
     Citizen(int, string, string, string);
+    // Copy Constructor
     Citizen(Citizen* citizen);
+    
+    // Object methods
     string getFirstName();
     string getLastName();
     int getID();

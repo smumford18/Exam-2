@@ -66,22 +66,25 @@ City::~City()
     output.close();
 }
 
-// Getter function for t
+// Getter function for the name of the city
 string City::getCityName()
 {
     return name;
 }
 
+// Getter function for the size of the city
 int City::populationSize()
 {
     return newCity.size();
 }
 
+// Returns the citizen at a specificed index
 Citizen* City::getCitizenAtIndex(int index)
 {
     return (newCity[index]);
 }
 
+// Adds a citizen to a city
 void City::addCitizen(Citizen* newCitizen)
 {
     Citizen* citizenToAdd = new Citizen(newCitizen);
@@ -89,6 +92,7 @@ void City::addCitizen(Citizen* newCitizen)
     numOfCitizens++;
 }
 
+// Returns the citizen with a specified ID
 Citizen* City::getCitizenWithId(int testID)
 {
     bool found = false;
@@ -107,6 +111,7 @@ Citizen* City::getCitizenWithId(int testID)
     return (newCity.at(0));
 }
 
+// Returns the citizens with a specified color as their favorite color
 vector<Citizen*> City::getCitizensForFavoriteColor(string favColor)
 {
     vector<Citizen*> citizensWithSameFavColor;

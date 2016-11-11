@@ -11,6 +11,7 @@
 
 #include "Citizen.hpp"
 
+// Constructor for a citizen
 Citizen::Citizen(int ID, string FNAME, string LNAME, string COLOR)
 {
     id = ID;
@@ -19,6 +20,7 @@ Citizen::Citizen(int ID, string FNAME, string LNAME, string COLOR)
     favColor = COLOR;
 }
 
+// Copy constructor
 Citizen::Citizen(Citizen* citizen)
 {
     id = citizen->getID();
@@ -27,26 +29,31 @@ Citizen::Citizen(Citizen* citizen)
     favColor = citizen->getFavoriteColor();
 }
 
+// Getter for the first name of a citizen
 string Citizen::getFirstName()
 {
     return fname;
 }
 
+// Getter function for the last name of a citizen
 string Citizen::getLastName()
 {
     return lname;
 }
 
+// Getter function for the ID of a citizen
 int Citizen::getID()
 {
     return id;
 }
 
+// Getter function for the favorite color of a citizen
 string Citizen::getFavoriteColor()
 {
     return favColor;
 }
 
+// Setter function for the favorite color of a citizen
 void Citizen::setFavoriteColor(string newFavColor)
 {
     favColor = newFavColor;

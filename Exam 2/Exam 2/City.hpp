@@ -28,9 +28,12 @@ public:
     vector<Citizen*> newCity;
     
 public:
+    // Constructor
     City(string);
+    // Destructor
     ~City();
     
+    // Object methods
     string getCityName();
     int populationSize();
     Citizen* getCitizenAtIndex(int);
