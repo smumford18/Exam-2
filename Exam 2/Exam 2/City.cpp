@@ -11,12 +11,16 @@
 
 #include "City.hpp"
 
+// Constructor function for a city
 City::City(string cityName)
 {
     name = cityName;
     numOfCitizens = 0;
     string filename = cityName + ".txt";
     ifstream fileIO(filename);
+    
+    // Checks to see if there is a file already there
+    //If there is not, it creates a new, empty file
     if(fileIO.fail())
     {
         ofstream newFile(filename);
@@ -24,6 +28,8 @@ City::City(string cityName)
             cout << "ERROR: could not open file" << endl;
         newFile.close();
     }
+    
+    // If there is a file, it adds the data from the file into a vector
     else
     {
         int id;
@@ -35,10 +41,13 @@ City::City(string cityName)
             newCity.push_back(citizenToAdd);
             numOfCitizens++;
         }
+        newCity.pop_back();
+        numOfCitizens--;
     }
     fileIO.close();
 }
 
+// Deconstructor that saves the data from the vector into a file
 City::~City()
 {
     string filename = name + ".txt";
@@ -57,6 +66,7 @@ City::~City()
     output.close();
 }
 
+// Getter function for t
 string City::getCityName()
 {
     return name;
@@ -64,7 +74,7 @@ string City::getCityName()
 
 int City::populationSize()
 {
-    return numOfCitizens;
+    return newCity.size();
 }
 
 Citizen* City::getCitizenAtIndex(int index)
